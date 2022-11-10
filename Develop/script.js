@@ -1,3 +1,4 @@
+//Global Variables & Arrays
 var characterLength = 8
 choiceArr = []
 
@@ -13,7 +14,7 @@ var generateBtn = document.querySelector("#generate");
 //Adds Event Listerner to generate password
 generateBtn.addEventListener("click", writePassword);
 
-// Write password to the #password input
+// Write password to the #password input &
 function writePassword() {
   var correctPrompts = getPrompts();
   var passwordText = document.querySelector("#password");
@@ -39,13 +40,13 @@ function generatePassword() {
 
 function getPrompts() {
   choiceArr = [];
-
-  characterLength = parseInt(prompt("How many characters do you want the password to be? (Please choose between the numbers (8-128))"));
+//checks user input to make sure that the input follows the paramaters
+  characterLength = (prompt("How many characters do you want the password to be? (Please choose between the numbers (8-128))"));
 if(isNaN(characterLength) || characterLength < 8 || characterLength > 128) {
   alert("Character length must be entered as a number; Please try again (8-128 choose a number between)");
  return false
 }
-
+// series of ifs deciding to add which arrays to the ChoiceArr[]
   if (confirm("Would you like Lowercase letters in the password?")) {
   choiceArr = choiceArr.concat(lowerArr);
 }
