@@ -1,7 +1,7 @@
 var characterLength = 8
 choiceArr = []
 
-specialChar = ["!","@","#","$","%","^","&","*","(",")","_","-","+","="]
+specialCharArr = ["!","@","#","$","%","^","&","*","(",")","_","-","+","="]
 lowerCharArr = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z",]
 upperCharArr = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z",]
 numberArr = ["0","1","2","3","4","5","6","7","8","9"]
@@ -59,9 +59,12 @@ if(isNaN(characterLength) || characterLength < 8 || characterLength > 128) {
     }
     
     if(confirm("Would you like Special Chars in the password?")) {
-      choiceArr = choiceArr.concat(specialChar);
+      choiceArr = choiceArr.concat(specialCharArr);
     }
 
+    else{
+      prompt("You must select one of the Upper, Lower, Numbers, or Special options!")
+    }
     return true
 
 
